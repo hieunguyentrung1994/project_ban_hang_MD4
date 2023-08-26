@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link rel="stylesheet" th:href="@{/css/login_signup.css}">
+</head>
+<body>
+<h2> Sign in/up Form</h2>
+<div class="container" id="container">
+  <div class="form-container sign-in-container">
+    <form  th:action="@{/handle-login}" th:object="${login_form}" method="post">
+      <div >
+        <label for="username">User Name</label>
+        <input type="text" id="username" th:field="*{username}">
+        <p style="color:red; width: 300px" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></p>
+      </div>
+      <div >
+        <label for="pass">PassWord</label>
+        <input type="password" id="pass" th:field="*{password}">
+        <p style="color:red; width: 300px" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></p>
+      </div>
+      <button type="submit" value="login">Login</button>
+    </form>
+  </div>
+  <div class="overlay-container">`
+      <div class="overlay-panel overlay-right">
+        <h1>Hello, Friend!</h1>
+        <p>Enter your personal details and start journey with us</p>
+        <a th:href="@{/Register}"><button class="ghost" id="signUp">Sign Up</button></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>

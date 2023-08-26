@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Responsive Admin &amp; Dashboard Template based on Bootstrap 5">
+    <meta name="author" content="AdminKit">
+    <meta name="keywords" content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="shortcut icon" th:href="@{/image/icons/icon-48x48.png}" />
+
+    <link rel="canonical" href="https://demo-basic.adminkit.io/" />
+
+    <title>AdminKit Demo - Bootstrap 5 Admin Template</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <link th:href="@{/css/app.css}" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+<div class="wrapper">
+    <nav id="sidebar" class="sidebar js-sidebar">
+        <div class="sidebar-content js-simplebar">
+            <a class="sidebar-brand" th:href="@{/admin/manager}">
+                <span class="align-middle">AdminKit</span>
+            </a>
+
+            <ul class="sidebar-nav">
+                <li class="sidebar-header">
+                    Pages
+                </li>
+                <li class="sidebar-item ">
+                    <a class="sidebar-link" th:href="@{/admin/manager}">
+                        <i class="align-middle" data-feather="grid"></i> <span class="align-middle">Dashboard</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" >
+                        <i class="align-middle" data-feather="grid"></i> <span class="align-middle">Category</span>
+                    </a>
+                </li>
+                <li class="sidebar-item active">
+                    <a class="sidebar-link" th:href="@{/admin/product}">
+                        <i class="align-middle" data-feather="square"></i> <span class="align-middle">Product</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" th:href="@{/user/list}">
+                        <i class="align-middle" data-feather="user"></i> <span class="align-middle">User</span>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+
+    <div class="main">
+        <main class="content">
+            <div class="container-fluid p-0">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title"> Product Edit</h3>
+                        <nav class="navbar navbar-expand-lg bg-light">
+                            <div class="container-fluid"></div>
+                        </nav>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <table>
+                            <form th:action="@{/product/edit_Product}" method="post" th:object="${product}" enctype="multipart/form-data">
+                                <table>
+                                    <tr>
+                                        <input type="hidden" id="id" name="id" th:field="*{id}">
+                                        <span th:text="*{id}"></span>
+                                    </tr>
+                                    <tr>
+                                        <th>Tên Sản Phẩm :</th>
+                                        <td>
+                                            <input type="text" id="name" name="nameProduct" required th:field="*{nameProduct}">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Ảnh đại diện :</th>
+                                        <td>
+                                            <input type="file" name="img" id="img" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Nội dung :</th>
+                                        <td>
+                                            <input type="text" name="content" required th:field="*{content}">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Số lượng có trong kho :</th>
+                                        <td>
+                                            <input type="number" name="quantityInStock" required th:field="*{quantityInStock}">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>giá bán sản phẩm :</th>
+                                        <td>
+                                            <input type="number" name="price" required th:field="*{price}">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>giới tính :</th>
+                                        <td>
+                                            <select name="sex" th:field="*{sex}">
+                                                <option value="true" th:selected="${product.sex == true}">nam</option>
+                                                <option value="false" th:selected="${product.sex == false}">nữ</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>thương hiệu :</th>
+                                        <td>
+                                            <select name="catagory">
+                                            <!-- Các option từ catagorys -->
+                                                <option  th:each="c : ${catagorys}"
+                                                        th:text="${c.name}"
+                                                        th:value="${c.id}"
+                                                        th:selected="${c.id == product.idCategory.id ? 'selected' : ''}"></option>
+                                            </select>
+
+
+                                        </td>
+                                    </tr>
+                                </table>
+                            <button   type="submit"
+                                  class="btn btn-danger"
+                                  data-bs-dismiss="modal">
+                            Thêm Mới
+                        </button>
+                            </form>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+</div>
+
+</body>
+
+</html>

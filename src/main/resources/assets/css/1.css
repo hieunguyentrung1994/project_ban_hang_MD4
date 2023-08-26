@@ -1,0 +1,638 @@
+.fontroboto{
+    font-family: 'Roboto Slab', serif;
+}
+.fontoswald{
+    font-family: 'Oswald', sans-serif;
+
+}
+.fontdancing{
+    font-family: 'Dancing Script', cursive;
+}
+
+img.logo{
+    width: 200px;
+    height: 70px;
+    transform: translate(-37px,0);
+}
+
+.lienhe {
+    border-left: 1px solid #ddd;
+    float: left;
+    margin-left: 17px;
+    padding-left: 25px;
+    font-family: 'Roboto Slab', serif;
+    font-size: 13px;
+    color: #ddd;
+    width: auto;
+}
+
+.lienhe.openingtop.float-sm-right {
+    border-right: 1px solid #ddd;
+    padding-right: 25px;
+}
+
+/*lay the a dau tien*/
+.mangxh a:nth-child(1) {
+    padding-left: 0px;
+}
+
+.mangxh a {
+    color: #dddddd;
+    font-size: 12px;
+    padding: 0 13px;
+}
+.mangxh a:hover{
+    color: #feb518;
+}
+.topheader {
+    background: #222222;
+    height: 40px;
+    color: white;
+    line-height: 40px;
+}
+/*END TOPHEADER*/
+
+.chu_slide1 {
+    position: absolute;
+    color: white;
+    margin-top: 10%;
+    transform: translateX(800px);
+}
+
+.chu_slide2 {
+    position: absolute;
+    color: white;
+    right: 150px;
+    top: 30%;
+    width: 72%;
+}
+
+.chu h2{
+    font-size: 50px;
+    font-style: bold;
+}
+.chu p{
+    font-family: 'Roboto Slab', serif;
+    font-size: 14px;
+}
+a.nutslide.btn.btn-warning{
+    border-radius: 0;
+    width: 165px;
+    height: 50px;
+    line-height: 50px;
+    color: black;
+    padding: 0;
+    font-size: 14px;
+}
+a.nutslide.btn.btn-warning:hover{
+    background-color: black;
+    color: #feb518;
+    transition: 0.8s;
+    border-width: 2px;
+}
+
+/*menu&logo*/
+a.nav-link {
+    color: #777;
+    font-size: 14px;
+    margin-top: 21px;
+    padding: 0 8px;
+    margin-bottom: 21px;
+    /* transform: translateY(-100px); */
+}
+a.nav-link:hover{
+    background-color: #feb518;
+    border-radius: 5px;
+    transition: 0.4s;
+}
+.dangnhap a.nav-link.btn.btn-warning {
+    font-size: 13px;
+    color: black;
+    border-radius: 0px;
+    height: 44px;
+    line-height: 44px;
+    width: 150px;
+    display: inline-block;
+    text-align: center;
+    padding: 0px;
+    transform: translateY(-6px);
+}
+.dangnhap a.nav-link.btn.btn-warning:hover{
+    background: white;
+    transition: 0.4s;
+    border-width: 2px;
+}
+/*End menu & logo*/
+
+.abc a{
+    color: #333;
+    font-size: 13px;
+    text-align: left;
+    display: inline-block;
+    padding-top: 15px;
+    font-family: 'Roboto Slab', serif;
+    border-top: 1px dashed #d6d6d6;
+}
+.abc a.readmore{
+    font-weight: 700;
+}
+.abc a.like{
+    padding-left: 65%;
+    color: #777;
+}
+.abc a:hover{
+    text-decoration: none;
+    color: #feb518;
+    transition: 0.4s;
+
+}
+
+/*.badichvu h3 a {*/
+/*    color: #333;*/
+/*    font-size: 24px;*/
+/*    font-family: 'Oswald', sans-serif;*/
+/*    padding-top: 25px;*/
+/*    padding-bottom: 15px;*/
+/*    display: block;*/
+/*    text-align: center;*/
+/*}*/
+
+.like{
+    color: #777;
+    font-size: 14px;
+    text-align: right;
+    display: block;
+    padding-top: 29px;
+    font-family: 'Roboto Slab', serif;
+}
+/*end 3dichvu*/
+/*tieudekhoiproduct*/
+
+h3.tieudechinh {
+    font-size: 36px;
+    color: #FFF;
+    font-weight: bold;
+}
+
+span.tieudephu {
+    font-size: 38px;
+    font-weight: bold;
+    color: #feb518;
+}
+
+.tieudekhoiprod.text-xs-center {
+    display: table;
+    height: 550px;
+    margin: auto;
+}
+
+.tieudekhoiprod .container {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.khoi_prod {
+    background: url(image/slide1.jpg);
+    color: white;
+    background-size: cover;
+    background-attachment: fixed;
+    margin-top: 70px;
+}
+/*end tieudekhoiproduct*/
+.product .tieude{
+    height: 40px;
+    line-height: 40px;
+    /* background: #feb518; */
+    margin-top: -60px;
+}
+.product .noidungchitiet{
+    position: relative;
+
+    padding-top: 100px;
+}
+
+.product .noidungchitiet .noidung{
+    height: 400px;
+    /*border-left: 1px dashed #5a5a5a;*/
+    position: absolute;
+    top: 0px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+/*hieuung*/
+
+.tieude a {
+    color: #fefefe;
+    font-size: 16px;
+    padding: 0 18px;
+}
+
+.tieude a:focus {
+    color: #feb518;
+    text-decoration: none;
+}
+.tieude a:hover{
+    text-decoration: none;
+    color: #feb518;
+}
+
+span.float-xs-right {
+    background: white;
+    transform: translateY(6px);
+    padding-left: 6px;
+}
+
+p.ten {
+    background: white;
+    transform: translateY(6px);
+    display: inline-block;
+    padding-right: 9px;
+}
+
+.detail_duoi {
+    font-family: 'Roboto Slab', serif;
+    font-size: 16px;
+    padding-top: 11px;
+    color: #111111;
+}
+
+.tensp .detail_tren {
+    font-family: 'Oswald', sans-serif;
+    font-size: 28px;
+    color: #333333;
+    /*border-bottom: 1px dashed #656060;*/
+}
+
+.col-xs-6.col-sm-8 {
+    padding: 0px;
+}
+
+.noidungchitiet .row .row .col-sm-4 {
+    padding: 0px 20px;
+}
+
+.tagnew {
+    position: absolute;
+    font-family: 'Roboto Slab', serif;
+    background: #feb518;
+    font-size: 11px;
+    color: #333;
+    padding: 0px 11px;
+}
+
+.anhsp img{
+    display: block;
+    max-width:230px;
+    max-height:95px;
+    width: 100%;
+    height: auto;
+}
+
+.motsp {
+    height: 108px;
+}
+/*hieu ung loc menu*/
+
+/*end hieuung*/
+
+/*slide mon an*/
+
+.tensp {
+    font-family: 'Oswald', sans-serif;
+    font-size: 17px;
+    padding-top: 15px;
+}
+
+ol.carousel-indicators {
+    display: none;
+}
+
+
+.sanpham {
+    width: 20%;
+    float: left;
+    box-sizing: border-box;
+    padding-left: 7px;
+    padding-right: 7px;
+}
+/*end slide monan*/
+
+span.vang {
+    color: #f3b518;
+}
+
+
+i.fa.fa-quote-left {
+    font-size: 33px;
+    padding-bottom: 66px;
+}
+
+.row {}
+/*comment user*/
+.quote:before{
+    content: '"';
+}
+.quote:after{
+    content: '"';
+}
+.author:before{
+    content: '-';
+}
+
+/*end comment user*/
+/*news*/
+
+.mottintuc p.fontroboto {
+    font-size: 14px;
+    line-height: 24px;
+    color: #777777;
+}
+
+.mottintuc h3 a {color: #333333;font-size: 18px;padding: 26px 0px 12px 0px;display: block;}
+
+.tintucabout h3 a {
+    font-size: 22px;
+}
+
+.tintucabout h3 a:hover {
+    text-decoration: none;
+}
+
+.mottintuc .ngaythang {
+    color: #777777;
+    font-size: 17px;
+    line-height: 24px;
+    font-family: roboto slab;
+    padding-bottom: 19px;
+}
+
+.mottintuc img {
+    width: 100%;
+    margin: 30px 0px;
+}
+
+.tieude2 {
+    font-weight: bold;
+    color: #333333;
+    font-size: 24px;
+
+}
+
+.tieude1 {
+    font-size: 40px;
+    color: #feb518;
+}
+
+.soon{
+    background: url(image/soon.png);
+    background-size: cover;
+    height: 450px;
+    margin-top: 55px;
+}
+.soon .title{
+    padding-top: 12%;
+}
+.soon .title_top{
+    font-size: 40px;
+    color: #fEB518;
+}
+.soon .title_bot{
+    font-size: 38px;
+    color: #fEB518;
+}
+
+.tintuchome {
+    padding-top: 60px;
+}
+
+/*end news*/
+/*footer*/
+
+
+.footerbottom {
+    background: #111111;
+    line-height: 91px;
+    height: 91px;
+    text-align: center;
+    font-family: roboto slab;
+    font-size: 13px;
+    color: #999;
+}
+
+.cot4 p {
+    font-family: roboto slab;
+}
+
+.opening1 .trai {
+    background: #151515;
+    float: left;
+    transform: translateY(10px);
+    padding-right: 6px;
+    font-family: roboto slab;
+}
+
+.opening1 .phai {
+    background: #151515;
+    transform: translateY(10px);
+    padding-left: 10px;
+    font-family: roboto slab;
+}
+
+.opening1 {border-bottom: 1px dashed #656060;height: 28px;margin-bottom: 21px;margin-top: -8px;}
+
+.cot3 {
+    padding-left: 90px;
+}
+
+.cot2 ul, .cot3 ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.cot2 ul li a,.cot3 ul li a {
+    color: #888;
+    font-size: 14px;
+    font-family: roboto slab;
+    line-height: 28px;
+}
+
+.cot2 ul li a:hover, .cot3 ul li a:hover {
+    text-decoration: none;
+    transition: 0.4s;
+    color: #ffffffb0;
+}
+
+h2.tdfooter {
+    font-size: 14px;
+    color: #ccc;
+    font-family: roboto slab;
+    position: relative;
+    padding-top: 17px;
+    padding-bottom: 29px;
+}
+
+h2.tdfooter:after {content: "";display: block;background: #feb518;height: 1px;width: 32px;top: 38px;position: absolute;}
+
+h3.tdfooter {
+    padding: 12px 31px;
+    font-size: 20px;
+}
+
+.motdong i {
+    padding-right: 20px;
+    padding-bottom: 30px;
+    color: #ffffffc7;
+    font-size: 13px;
+    float: left;
+    padding-top: 7px;
+}
+
+.motdong {
+    overflow: hidden;
+}
+
+.footertop {
+    background: #151515;
+    line-height: 24px;
+    font-size: 14px;
+    color: #888;
+    padding-top: 113px;
+    padding-bottom: 100px;
+    margin-top: 50px;
+}
+
+/*end footer*/
+
+/*xuli trang giohang*/
+tr.cart-item td{
+    vertical-align: middle;
+    text-align: center;
+}
+.shop_table{
+    border: 1px solid #f7f7f9;
+    transform: translate(10px, 12px);
+}
+.shop_table thead th{
+    background: #f7f7f9;
+    text-align: center;
+    border-right: 2px solid #ebebeb;
+    padding: 23px;
+
+}
+.actions a{
+    text-transform: uppercase;
+    float: left;
+}
+.detail_cart{
+    float: right;
+}
+.detail_cart .coupon .apply_code{
+    width: auto;
+    padding: 0 10px;
+    height: 30px;
+    background: #ccc;
+    border: none;
+    cursor: default;
+    box-shadow: none;
+}
+.coupon .coupon_code{
+    right: -6px;
+    position: relative;
+    top: 2px;
+}
+.detail_cart .total_cart h2{
+    font-size: 25px;
+    line-height: 45px;
+    padding: 20px 0;
+}
+a.checkout{
+    display: inline-block;
+    vertical-align: top;
+    white-space: nowrap;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    background: #f0AD4E;
+    color: black;
+    line-height: 1.5;
+    margin-bottom: 12px;
+    width: 100%;
+    padding: 18px 24px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 16px;
+
+}
+a.checkout:hover{
+    background-color: black;
+    color: #feb518;
+    transition: 0.8s;
+    border-width: 1px;
+}
+/*end trang giohang*/
+
+/*xu ly chi tiet sp*/
+.produc_img img{
+    margin-top: 50px;
+    width: 100%;
+}
+.size_table {
+    display: flex;
+}
+.size{
+    border: 1px solid black;
+    border-radius: 4px;
+    text-align: center;
+    margin-top: 20px;
+    padding: 13px;
+    font-size: 16px;
+    font-family: roboto slab;
+}
+.size .select{
+    display: none;
+
+}
+/*end xu ly chi tiet sp*/
+
+/*Xu ly trang san pham men & women*/
+
+.motspchuan a.duoi{
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.motspchuan img{
+    display: block;
+    max-width:350px;
+    max-height:430px;
+    width: 100%;
+    height: auto;
+}
+.price_prod{
+    border-bottom: 1px solid #d5d5d5;
+    padding: 10px 0 0 0;
+    line-height: 14px
+}
+
+.price_prod i {
+    font-size: 10px;
+    text-transform: uppercase;
+    font-style: normal;
+}
+
+/*End xu ly trang san pham men & women*/
+
+
+.img_sanpham {
+    object-fit: contain; /* Giữ cho toàn bộ hình ảnh hiển thị trong khung */
+    transition: transform 0.3s ease; /* Thêm hiệu ứng chuyển đổi mượt mà khi phóng to và thu nhỏ */
+    overflow: hidden; /* Ẩn phần nội dung vượt ra khỏi kích thước đã đặt */
+}
+
+
+/* Phóng to hình ảnh khi hover */
+.img_sanpham:hover {
+    transform: scale(1.1); /* Phóng to hình ảnh lên 10% */
+}

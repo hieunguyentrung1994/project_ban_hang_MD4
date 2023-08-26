@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Jan Auth</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="text/javascript" th:src="@{/js/bootstrap.js}"></script>
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700&display=swap&subset=vietnamese" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700&display=swap&subset=vietnamese" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700&display=swap&subset=vietnamese" rel="stylesheet">
+
+	<!-- <script type="text/javascript" src="jqueryupload/js/vendor/jquery.ui.widget.js"></script>
+	<script type="text/javascript" src="jqueryupload/js/jquery.fileupload.js"></script> -->
+	<script type="text/javascript" th:src="@{/js/isotope.pkgd.min.js}"></script>
+	<script type="text/javascript" th:src="@{/imagesloaded.pkgd.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/1.js}"></script>
+	<link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+	<link rel="stylesheet" th:href="@{/css/font-awesome.css}">
+	<link rel="stylesheet" th:href="@{/css/1.css}">
+	<script src="https://kit.fontawesome.com/ba55c8bf56.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="topheader">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="mangxh float-sm-left text-xs-center text-sm-left">
+					<a href="https://www.facebook.com/Jan1Auth/"><i class="fa fa-facebook"></i></a>
+					<a href=""><i class="fa fa-twitter"></i></a>
+					<a href=""><i class="fa fa-pinterest"></i></a>
+					<a href=""><i class="fa fa-google-plus"></i></a>
+				</div>
+				<div class="lienhe">
+					Call for shop: 0981689527
+				</div>
+			</div>
+
+			<div class="col-sm-6">
+				<div class="lienhe openingtop float-sm-right text-sm-left text-xs-center">
+					Opening Hours : 9:00am - 10:00pm
+				</div>
+			</div>
+
+		</div>
+		<!-- end row -->
+	</div>
+	<!-- end container -->
+</div>
+<!-- end topheader -->
+<div class="logovamenu">
+	<nav class="navbar navbar-light bg-faded fontroboto">
+		<div class="container">
+			<button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#mtren">
+
+			</button>
+			<div class="collapse navbar-toggleable-xs" id="mtren">
+				<a class="navbar-brand text-xs-center text-sm-left" th:href="@{/home}"><img th:src="@{/image/JA.png}" alt="" class="logo"></a>
+
+				<ul class="nav navbar-nav float-sm-right">
+					<li class="nav-item">
+						<a class="nav-link" th:href="@{/home}">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" th:href="@{/men}">Men</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" th:href="@{/women}">Women</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" th:href="@{/news}">News</a>
+					</li>
+					<li class="nav-item dangnhap">
+						<a class="nav-link btn btn-warning" th:href="@{/login}">Login</a>
+					</li>
+					<li class="nav-item cart active">
+						<a th:href="@{/giohang}" class="nav-link"><i class="fa-solid fa-cart-shopping"></i></a>
+					</li>
+				</ul>
+
+			</div>
+		</div>
+		<!-- end container -->
+	</nav>
+</div>
+
+<!--Xu ly-->
+<div class="khoitieude text-xs-center">
+	<h2>Men's Shoe</h2>
+	<nav class="breadcrumb">
+		<a href="home">Home</a> &nbsp; / &nbsp; <a href="men">Men</a>
+	</nav>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-4" th:each="p,loop :${ListProductMen}">
+			<div class="motspchuan">
+				<a th:href="@{|product_detail/${p.id}|}" class="duoi">
+					<img class="img_sanpham" style=" width: 303px;height: 303px" th:src="@{|/image/${p.getImg()}|}" alt="">
+					<p class="price_prod">
+						<span class="price" th:text="${p.getPrice()}"><i>VNĐ</i></span>
+
+					</p>
+					<span th:text="${p.getIdCategory().getName()}"></span>
+				</a>
+			</div>
+		</div>
+
+
+	</div>
+</div>
+<!--End xu ly-->
+
+<!--Pagination-->
+	<nav aria-label="Something" class="text-xs-center">
+		<ul class="pagination justify-content-center bg-light">
+			<li class="page-item disabled">
+				<a class="page-link" href="#" tabindex="-1">Previous</a>
+			</li>
+			<li class="page-item"><a class="page-link" href="#">1</a></li>
+			<li class="page-item"><a class="page-link" href="#">2</a></li>
+			<li class="page-item"><a class="page-link" href="#">3</a></li>
+			<li class="page-item">
+				<a class="page-link" href="#">Next</a>
+			</li>
+		</ul>
+	</nav>
+<!--End Pagination-->
+
+	<div class="footertop wow slideInUp">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-3 cot1">
+					<img class = "logo" th:src="@{/image/janauth.png}" alt="" >
+					<div class="motdong">
+						<i class="fa fa-paper-plane-o"></i>
+						<span class="textmotdong">Address: 66 Nguyễn Đỗ Cung, Phường Tây Thạnh, Quận Tân Phú, TPHCM</span>
+					</div>
+					<div class="motdong">
+						<i class="fa fa-phone"></i>
+						<span class="textmotdong">Phone: 0981689527</span>
+					</div>
+					<div class="motdong">
+						<i class="fa fa-envelope-o"></i>
+						<span class="textmotdong">Email: duongsy1920@gmail.com</span>
+					</div>					
+				</div>
+
+				<div class="col-sm-3 cot3">
+					<h2 class="tdfooter">HỖ TRỢ THANH TOÁN</h2>
+					<ul>
+						<li><p><i class="fa fa-cc-mastercard mr-2"></i>MasterCard</p></li>
+						<li><p><i class="fa fa-cc-visa mr-2"></i>Visa</p></li>
+						<li><p><i class="fa fa-credit-card mr-2"></i>Thẻ tín dụng</p></li>
+						<li><p><i class="fa fa-money mr-2"></i>Tiền mặt</p></li>
+					</ul>
+				</div>
+
+				<div class="col-sm-3 cot4">
+					<h2 class="tdfooter">Opening Hours</h2>
+					<div class="opening1">
+						<div class="phai float-xs-right">9:00am - 23:00pm</div>
+						<div class="trai">Mon - Fri</div>
+					</div>
+					<div class="opening1">
+						<div class="phai float-xs-right">10:00am - 22:00pm</div>
+						<div class="trai">Saturday</div>
+					</div>
+					<div class="opening1">
+						<div class="phai float-xs-right">10:00am - 21:00pm</div>
+						<div class="trai">Sunday</div>
+					</div>
+					<!-- <p>Note: JanAuth is closed on holidays.</p> -->
+				</div>
+				<div class="col-sm-3 cot2">
+					<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FJan1Auth%2F&tabs&width=340&height=214&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=334425180836840" width="340" height="214" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end footertop -->
+	<div class="footerbottom wow slideInUp">
+		Copyright © 2020. All Rights Reserved
+	</div>
+	<!-- end footerbottom -->
+</body>
+</html>

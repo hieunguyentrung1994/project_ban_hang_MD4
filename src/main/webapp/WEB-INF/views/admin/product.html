@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Responsive Admin &amp; Dashboard Template based on Bootstrap 5">
+    <meta name="author" content="AdminKit">
+    <meta name="keywords"
+          content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="shortcut icon" th:href="@{image/icons/icon-48x48.png}"/>
+
+    <link rel="canonical" href="https://demo-basic.adminkit.io/"/>
+
+    <title>AdminKit Demo - Bootstrap 5 Admin Template</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <link th:href="@{/css/app.css}" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+<div class="wrapper">
+    <nav id="sidebar" class="sidebar js-sidebar">
+        <div class="sidebar-content js-simplebar">
+            <a class="sidebar-brand" th:href="@{/admin/manager}">
+                <span class="align-middle">AdminKit</span>
+            </a>
+
+            <ul class="sidebar-nav">
+                <li class="sidebar-header">
+                    Pages
+                </li>
+                <li class="sidebar-item ">
+                    <a class="sidebar-link" th:href="@{/admin/manager}">
+                        <i class="align-middle" data-feather="grid"></i> <span class="align-middle">Dashboard</span>
+                    </a>
+                </li>
+                <li class="sidebar-item ">
+                    <a class="sidebar-link" th:href="@{/category/list}" >
+                        <i class="align-middle" data-feather="grid"></i> <span class="align-middle">Category</span>
+                    </a>
+                </li>
+                <li class="sidebar-item" active>
+                    <a class="sidebar-link" >
+                        <i class="align-middle" data-feather="square"></i> <span class="align-middle">Product</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" th:href="@{/user/list}">
+                        <i class="align-middle" data-feather="user"></i> <span class="align-middle">User</span>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+
+    <div class="main">
+
+
+        <main class="content">
+            <div class="container-fluid p-0">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title"> Category Table</h3>
+                        <nav class="navbar navbar-expand-lg bg-light">
+                            <div class="container-fluid">
+
+                                    <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                                            data-bs-target="#exampleModal">+ Add new Category
+                                    </button>
+
+                                <form class="d-flex" role="search">
+                                    <input class="form-control me-2 fst-italic" type="search"
+                                           placeholder="Enter category's name... "
+                                           aria-label="Search">
+                                    <button class="btn btn-outline-success" type="submit">Search</button>
+                                </form>
+                            </div>
+                        </nav>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <table id="example1" class="table table-bordered table-striped text-center">
+                            <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>Tên Sản Phẩm</th>
+                                <th>Ảnh Chính Sản Phẩm</th>
+<!--                                <th>Ảnh Phụ Sản Phẩm</th>-->
+                                <th>Sản Phẩm Trong Kho</th>
+                                <th>Giá Sản Phẩm</th>
+                                <th>Giới Tính</th>
+                                <th>Thương Hiệu</th>
+                                <th>Trạng Thái</th>
+                                <th colspan="2">Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            <tr th:each="p,loop :${products}">
+                                <td th:text="${p.getId()}"></td>
+                                <td th:text="${p.getNameProduct()}">Tên Sản Phẩm</td>
+                                <td ><img th:src="@{|/image/${p.getImg()}|}" width="20%" alt="#"></td>
+<!--                                <td>Ảnh Phụ Sản Phẩm</td>-->
+                                <td th:text="${p.getQuantityInStock()}" >Sản Phẩm Trong Kho</td>
+                                <td th:text="${p.getPrice()}">giá sản phẩm</td>
+                                <td th:text="${p.isSex()}">Giới Tính</td>
+                                <td th:text="${p.getIdCategory().getName()}">Thương Hiệu</td>
+                                <td th:text="${p.isStatus()} ? 'bán bình thường': 'cấm bán' ">Trạng Thái</td>
+                                <td>
+                                    <a th:href="@{|edit/${p.id}|}" >
+                                        <button type="button" class="btn btn-warning" >Edit</button>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a th:href="@{|delete/${p.id}|}">
+                                        <button type="button" class="btn btn-danger" >Delete</button>
+                                    </a>
+                                </td>
+                            </tr>
+
+                            </tbody>
+
+                        </table>
+                    </div>
+                    <nav aria-label="Page navigation example ">
+                        <ul class="pagination float-end mx-4">
+                            <li class="page-item disabled">
+                                <a class="page-link">Previous</a>
+                            </li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <!-- /.card-body -->
+                </div>
+            </div>
+        </main>
+
+
+    </div>
+</div>
+
+
+<div
+        class="modal fade modal-main"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Thêm Mới Sản Phẩm</h1>
+                <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                ></button>
+            </div>
+            <div class="modal-body">
+                <form th:action="@{/product/ADD}" method="post" enctype="multipart/form-data">
+                    <table>
+                        <tr>
+                            <th>Tên Sản Phẩm :</th>
+                            <td>
+                                <label for="nameProduct"></label>
+                                <input type="text" name="nameProduct" id="nameProduct"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Ảnh đại diện :</th>
+                            <td><label for="img"></label>
+                                <input type="file" name="img" id="img"/>
+                            </td>
+                        </tr>
+<!--                        <tr>-->
+<!--                            <th>Ảnh Chi Tiết Sản Phẩm :</th>-->
+<!--                            <td>-->
+<!--                                <label for="listIMG"></label>-->
+<!--                                <input type="file" name="listIMG" id="listIMG" multiple/>-->
+<!--                            </td>-->
+<!--                        </tr>-->
+                        <tr>
+                            <th>Nội dung :</th>
+                            <td>
+                                <label for="content"></label>
+                                <input type="text" name="content" id="content"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Số lượng có trong kho :</th>
+                            <td>
+                                <label for="quantityInStock"></label>
+                                <input type="number" name="quantityInStock" id="quantityInStock"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Giá bán sản phẩm :</th>
+                            <td>
+                                <label for="price"></label>
+                                <input type="number" name="price" id="price"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>giới tính :</th>
+                            <td>
+                                <select for="sex" name="sex">
+                                    <option value="true">nam</option>
+                                    <option value="false">nữ</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>thương hiệu :</th>
+                            <td>
+                                <select name="catagory">
+                                    <option th:each="c : ${catagorys}" th:text="${c.getName()}" th:value="${c.getId()}"></option>
+                                </select>
+                            </td>
+                        </tr>
+
+
+                    </table>
+                    <button   type="submit"
+                              class="btn btn-danger"
+                              data-bs-dismiss="modal">
+                        Thêm Mới
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>
